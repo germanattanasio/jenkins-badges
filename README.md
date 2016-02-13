@@ -14,6 +14,9 @@ http://jenkins-badges.mybluemix.net/
 
 **Note:** If your jenkins is running behind a firewall or in a VPN you will need to won't be able to use the live demo.
 
+Fork this repo and deploy your own version on [Bluemix][bluemix] automatically:  
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/germanattanasio/jenkins-badges)
+
 ## Supported Plugins
 
  * [JaCoCo][jacoco]
@@ -64,7 +67,7 @@ MIT.
 ## Contributing
 See [CONTRIBUTING](https://github.com/germanattanasio/jenkins-badges/blob/master/CONTRIBUTING.md).
 
-[Bluemix]: http://bluemix.net/
+[bluemix]: http://bluemix.net/
 [express]: http://expressjs.com/
 [jenkins]: https://jenkins-ci.org/
 [jacoco]: http://eclemma.org/jacoco/

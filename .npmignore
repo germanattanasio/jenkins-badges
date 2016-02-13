@@ -1,0 +1,12 @@
+test
+node_modules
+coverage
+.jshintignore
+.hshintrc
+.jshintrc
+.travis.yml
+.DS_Store
+# documentation files
+CONTRIBUTING.md
+manifest.yml
+Procfile
