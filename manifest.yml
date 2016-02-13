@@ -1,0 +1,8 @@
+applications:
+- name: jenkins-badges
+  path: .
+  memory: 256M
+  instances: 2
+  command: npm start
+  env:
+    NODE_ENV: production

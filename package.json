@@ -1,0 +1,53 @@
+{
+  "name": "jenkins-badges",
+  "description": "Create shield.io badges from jenkins plugins.",
+  "version": "0.5.1",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mocha": "^2.4.5",
+    "request": "2.59.0",
+    "request-promise": "^2.0.0",
+    "string-template": "^1.0.0",
+    "valid-url": "^1.0.9",
+    "xml2js": "^0.4.16"
+  },
+  "preferGlobal": "true",
+  "bin": {
+    "jbadges": "./server.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "npm run jshint && (npm run codecov || true)",
+    "jshint": "jshint --exclude ./node_modules/",
+    "codecov": "istanbul cover ./node_modules/mocha/bin/_mocha && codecov"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.2",
+    "jshint": "^2.9.1",
+    "mocha": "^2.4.5",
+    "nock": "^7.0.2",
+    "supertest": "^1.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/germanattanasio/jenkins-badges.git"
+  },
+  "keywords": [
+    "jenkins",
+    "badge",
+    "coverage",
+    "jacoco",
+    "cobertura",
+    "shield.io"
+  ],
+  "author": "German Attanasio Ruiz <germanattanasio@gmail.com>",
+  "contributors": [
+    {
+      "name": "mnpk",
+      "email": "mnncat@gmail.com"
+    }
+  ],
+  "license": "MIT"
+}
