@@ -26,7 +26,7 @@ describe('cobertura', function() {
     }
   };
 
-  it('should generate a valid badge', function() {
+  it('should generate a green badge', function() {
     nock(jenkinsUrl)
       .get(jobPath + reportUrl)
       .reply(200, validResponse);
@@ -36,6 +36,7 @@ describe('cobertura', function() {
       assert.deepEqual({label: '98.12%', color: 'brightgreen'}, badge);
     });
   });
+  
   it('should generate an error if jenkins doesn\'t return a 200', function() {
     nock(jenkinsUrl)
       .get(jobPath + reportUrl)

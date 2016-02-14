@@ -46,14 +46,16 @@ app.get('/:plugin/:fn', function(req, res) {
     res.status(404).send('Unknown method: '+ req.params.fn +' for plugin: ' + req.params.plugin);
     return;
   } else if (!req.query.job && !validUrl.isWebUri(req.query.job)) {
-    res.status(404).send('Missing query parameter: job, it must be a valid HTTP/HTTPS url');
+    res.status(400).send('Missing query parameter: job, it must be a valid HTTP/HTTPS url');
     return;
   }
 
   // Call plugin#fn() and return the badge
   plugins[req.params.plugin][req.params.fn](req.query, function(err, badge) {
     // override default parameters with the result from: plugin.fn()
-    var badgeParams = extend(DEF_BADGE_PARAMS, { subject: req.params.fn}, err ? {} : badge);
+    badge.subject = req.params.fn;
+
+    var badgeParams = extend(DEF_BADGE_PARAMS, badge);
     return res.redirect(format(BADGE_URL, badgeParams));
   });
 });

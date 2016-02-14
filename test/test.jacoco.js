@@ -12,14 +12,6 @@ describe('jacoco', function() {
   var response = '<coverageReport><lineCoverage><percentageFloat>' + 98.12 +
     '</percentageFloat></lineCoverage></coverageReport>';
 
-  before(function() {
-    nock.disableNetConnect();
-  });
-
-  after(function() {
-    nock.cleanAll();
-  });
-
   it('should generate a valid badge', function(done) {
     nock(jenkinsUrl)
       .get(jobPath + reportUrl)
