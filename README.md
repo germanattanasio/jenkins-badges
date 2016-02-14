@@ -62,7 +62,7 @@ Running a specific test:
 
 ## License
 
-MIT.
+MIT
 
 ## Contributing
 See [CONTRIBUTING](https://github.com/germanattanasio/jenkins-badges/blob/master/CONTRIBUTING.md).
