@@ -1,22 +1,22 @@
 'use strict';
 
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var extend = require('util')._extend;
-var validUrl = require('valid-url');
-var format = require('string-template');
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const extend = require('util')._extend;
+const validUrl = require('valid-url');
+const format = require('string-template');
 
-var BADGE_URL = 'https://img.shields.io/badge/{subject}-{label}-{color}.svg?style={style}';
+const BADGE_URL = 'https://img.shields.io/badge/{subject}-{label}-{color}.svg?style={style}';
 // default parameters
-var DEF_BADGE_PARAMS = {
+const DEF_BADGE_PARAMS = {
   label: 'Unknown',
   color: 'lightgrey',
   style: 'flat'
 };
 
 // jenkins plugins
-var plugins = {
+const plugins = {
   cobertura: require(__dirname + '/plugins/cobertura'),
   jacoco: require(__dirname + '/plugins/jacoco')
 };
@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 // list plugins and methods
 app.get('/', function(req, res) {
-  var availablePlugins = extend({}, plugins);
+  const availablePlugins = extend({}, plugins);
 
   Object.keys(plugins).forEach(function(key) {
     availablePlugins[key] = Object.keys(plugins[key]).map(function(m) { return m;});
@@ -55,7 +55,7 @@ app.get('/:plugin/:fn', function(req, res) {
     // override default parameters with the result from: plugin.fn()
     badge.subject = req.params.fn;
 
-    var badgeParams = extend(DEF_BADGE_PARAMS, badge);
+    const badgeParams = extend(DEF_BADGE_PARAMS, badge);
     return res.redirect(format(BADGE_URL, badgeParams));
   });
 });

@@ -6,30 +6,28 @@
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
-    "mocha": "^2.4.5",
-    "request": "2.59.0",
-    "request-promise": "^2.0.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
     "string-template": "^1.0.0",
     "valid-url": "^1.0.9",
     "xml2js": "^0.4.16"
   },
-  "preferGlobal": "true",
   "bin": {
     "jbadges": "./server.js"
   },
   "scripts": {
     "start": "node server.js",
-    "test": "npm run jshint && (npm run codecov || true)",
-    "jshint": "jshint --exclude ./node_modules/",
-    "codecov": "istanbul cover ./node_modules/mocha/bin/_mocha && codecov"
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha",
+    "lint": "jshint --exclude ./node_modules/",
+    "codecov": "npm run test && codecov"
   },
   "devDependencies": {
-    "codecov": "^1.0.1",
+    "codecov": "^3.6.1",
     "istanbul": "^0.4.2",
     "jshint": "^2.9.1",
-    "mocha": "^2.4.5",
-    "nock": "^7.0.2",
-    "supertest": "^1.2.0"
+    "mocha": "^6.2.1",
+    "nock": "^11.3.5",
+    "supertest": "^4.0.2"
   },
   "repository": {
     "type": "git",
