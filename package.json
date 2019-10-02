@@ -1,7 +1,7 @@
 {
   "name": "jenkins-badges",
   "description": "Create shield.io badges from jenkins plugins.",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.0",
