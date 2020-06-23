@@ -6,11 +6,11 @@
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
     "string-template": "^1.0.0",
     "valid-url": "^1.0.9",
-    "xml2js": "^0.4.16"
+    "xml2js": "^0.4.23"
   },
   "bin": {
     "jbadges": "./server.js"
@@ -19,14 +19,14 @@
     "start": "node server.js",
     "test": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "lint": "jshint --exclude ./node_modules/",
-    "codecov": "npm run test && codecov"
+    "codecov": "nyc npm run test && codecov"
   },
   "devDependencies": {
-    "codecov": "^3.6.1",
-    "istanbul": "^0.4.2",
-    "jshint": "^2.9.1",
-    "mocha": "^6.2.1",
-    "nock": "^11.3.5",
+    "codecov": "^3.7.0",
+    "jshint": "^2.11.1",
+    "mocha": "^8.0.1",
+    "nock": "^12.0.3",
+    "nyc": "^15.1.0",
     "supertest": "^4.0.2"
   },
   "repository": {
